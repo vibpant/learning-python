@@ -26,107 +26,183 @@ dict
 None #used for null values
 
 #Fundamental Data Types
+
 #Integers = Whole numbers
+
 print(type(2 + 4))
+
 print(type(2 * 4))
+
 print(type(2 - 4))
+
 #To the power of
+
 print(2 ** 2)
+
 #Rounds it to nearest integer
+
 print(5 // 4)
+
 #Prints the remainder of the division
+
 print(6 % 4)
 
 #Floating Points = Numbers with Decimal points
+
 print(type(2 / 4)) #0.5
+
 #Integer and Floating points needs to be differentiated so that the interpreter can convert it to the binary correctly. Floating point requires more memory.
 
 #Math Functions (Actions)
+
 #rounding up or down
+
 print(round(3.9))
+
 #absolute value of the argument (no negative numbers)
+
 print(abs(-20))
+
 #don't memorize all the actions - google them
 
 #operator precedence
+
 print(20 - (3 * 4))
+
 #Use BODMAS in equations - important for operator precedence
 
 #extra data type
+
 #only used in complex math and is not used generally
+
 complex()
+
 #binary Functions -> converts int and floats to their binary values
+
 print(bin(5)) #0b101
+
 #reverse
+
 print(int('0b101', 2))
 
 #variables in Python : way to input information and assign it a name 
+
 #variables are:
+
 #snake_case
+
 #start with lowercase or underscore
+
 #case sentive
+
 #don't overwrite keywords
+
 iq = 190
+
 user_age = iq/4
+
 a = user_age
 
 print(a)
+
 #constants: best practice and shouldn't be changed
+
 PI = 3.4
+
 #shorthand way to assign variables
+
 a,b,c = 1,2,3
+
 print(a)
 
 iq = 100
+
 user_age = iq / 5 #RHS is "expression"
 
 some_value = 5
+
 some_value = 5 + 2
+
 some_value = some_value + 2
+
 #augmented assignment operator
+
 some_value += 5
+
 #make sure the variable is declared beforehand using the augmented assignement operator
 print(some_value)
 
 #Fundamental data type
+
 #String 
+
 'hi hello there'
+
 "hi hello there"
+
 #anything in quotes (single or double) will take the form of string data type
 print(type("he hey"))
+
 #how to write long string 
+
 long_string = '''
+
 W0W
+
 O O
+
 ---
+
 '''
+
 print(long_string)
+
 first_name = "Vibhor"
+
 last_name = "Pant"
+
 full_name = first_name + " " + last_name
+
 print(full_name)
 
 #string concatenation
+
 print('hello' + 'Vibhor')
+
 #can't concatenate string and int
 
 #relation between str, int and type functions + Type conversion
+
 str(100)
+
 print(type(int(str(100))))
+
 #or
+
 a = str(100)
+
 b = int(a)
+
 c = type(b)
+
 print(c)
 
 #Escape Sequence - using a backslash to add quotes as a string
+
 weather_1 = "It\'s \"kind of\" sunny"
+
 print(weather_1)
+
 #example of adding a backslash in the string and not as an escape sequence 
+
 weather_2 = "It\/s \"kind of\" sunny"
+
 print(weather_2)
+
 #tab example and next line using \t and \n
+
 weather_3 = "\t It\'s \"kind of\" sunny \n hope you have a good day!"
+
 print(weather_3)
 
 #formatted strings
