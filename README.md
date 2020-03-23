@@ -2,15 +2,25 @@
 All code learned during Udemy's "Complete Python Developer in 2020 - Zero to Mastery" course.
 
 #Fundamental Data Types
+
 int
+
 float
+
 bool
+
 str
+
 list
+
 tuple
+
 set
+
 dict
+
 #Classes -> customer types
+
 #Specialized Data Types
 
 None #used for null values
