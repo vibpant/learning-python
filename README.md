@@ -1,7 +1,7 @@
 # learning-python
 All code learned during Udemy's "Complete Python Developer in 2020 - Zero to Mastery" course.
 
-#Fundamental Data Types
+# Fundamental Data Types
 
 int
 
@@ -25,9 +25,7 @@ dict
 
 None #used for null values
 
-#Fundamental Data Types
-
-#Integers = Whole numbers
+# Fundamental Data Types - Integers = Whole numbers
 
 print(type(2 + 4))
 
@@ -35,25 +33,25 @@ print(type(2 * 4))
 
 print(type(2 - 4))
 
-#To the power of
+# To the power of
 
 print(2 ** 2)
 
-#Rounds it to nearest integer
+# Rounds it to nearest integer
 
 print(5 // 4)
 
-#Prints the remainder of the division
+# Prints the remainder of the division
 
 print(6 % 4)
 
-#Floating Points = Numbers with Decimal points
+# Floating Points = Numbers with Decimal points
 
 print(type(2 / 4)) #0.5
 
 #Integer and Floating points needs to be differentiated so that the interpreter can convert it to the binary correctly. Floating point requires more memory.
 
-#Math Functions (Actions)
+# Math Functions (Actions)
 
 #rounding up or down
 
@@ -132,9 +130,7 @@ some_value += 5
 #make sure the variable is declared beforehand using the augmented assignement operator
 print(some_value)
 
-#Fundamental data type
-
-#String 
+# Fundamental data type - String 
 
 'hi hello there'
 
@@ -165,7 +161,7 @@ full_name = first_name + " " + last_name
 
 print(full_name)
 
-#string concatenation
+# String concatenation
 
 print('hello' + 'Vibhor')
 
@@ -206,120 +202,212 @@ weather_3 = "\t It\'s \"kind of\" sunny \n hope you have a good day!"
 print(weather_3)
 
 #formatted strings
+
 #regular example
+
 name = 'Johnny'
+
 age = 55
+
 print('hi ' + name + '. You are ' + str(age) + ' years old.')
+
 #formatted example
+
 #this is a new feature of Python3 by adding f to the beginning 
+
 print(f'hi {name}. You are {age} years old.')
+
 #this can be done using .format code in Python 2 - not necessary for a new user
 
 #strings are stored in a order - repetition doesn't matter, order stays. 
+
 selfish = 'me me me'
-# 01234567
+
+#01234567
+
 print(selfish[0]) #m
+
 print(selfish[7]) #e
+
 #string indexes examples / string slicing
+
 #[start:stop]
+
 selfish_1 = '01234567'
-# 01234567
+
+#01234567
+
 print(selfish_1[0:2]) #01 
+
 #[start:stop:stepover]
+
 print(selfish_1[0:8:2]) #0246
+
 print(selfish_1[1:]) #1234567
+
 print(selfish_1[:5]) #01234
+
 print(selfish_1[::1]) #01234567
+
 print(selfish_1[-1]) #7
+
 print(selfish_1[::-1]) #76543210
 
-#immutability
+# Immutability
+
 #once strings are given a value, they cannot be changed through an action (slicing). One needs to go to the source and reassign. That is called immutability through function
 
+# Built in functions. 
 
-#Built in functions. 
 print(len('heelllloooo'))
+
 #using string indexes with len
+
 greet = 'yyyaassss'
+
 print(greet[0:len(greet)])
+
 #Built in methods
+
 #always starts with a . (dot)
+
 #.format()
+
 quote = 'to be or not to be'
+
 print(quote.upper()) #capitalize everything
+
 print(quote.capitalize()) #capitalizes only the first letter
+
 print(quote.find('be')) #searches the index of a part of string
+
 print(quote.replace('be', 'me')) #replaces 1st string with the second
+
 #remember strings are immutable by functions, the above example using .replace is only creating another string without assigning it
+
 print(quote) #this would print the original string values assigned above. 
 
-#booleans - True or False (0 and 1) - logical values. Used in conditions. 
+# Booleans - True or False (0 and 1) - logical values. Used in conditions. 
+
 name = 'Vibhor'
+
 is_cool = False
+
 is_cool = True
+
 print(bool(1))
+
 print(bool(0))
+
 print(bool('True'))
 
 #facebook data example
+
 name = 'Vibhor Pant'
+
 age = '36'
+
 relationship_status = "Married"
+
 relationship_status = 'It\'s complicated'
+
 print(relationship_status)
+
 #input method
+
 birth_year = input('what year were you born?\n')
+
 #inputs are always converted into a str so its important to convert them to int
+
 age = 2020 - int(birth_year)
+
 print(f'Your age is {age}')
 
-
 #Exercise: Password Checker
+
 username = input('username \n')
+
 password = input('password \n')
+
 passwordlength = len(password)
+
 secret = passwordlength * '*'
+
 print(f'{username}, your password {secret} is {passwordlength} letters long')
 
+# Lists
 
 #lists in Python are a form of array
+
 #ordered sequence
+
 #use square brackets to activate a list
+
 li = [1,2,3,4,5]
+
 li2 = ['a', 'b','c']
+
 li3 = [1,2,3, 'a', True]
+
 # Data structure
+
 #organize information/data in one place
+
 #a container of data with it pros and cons. 
+
 amazon_cart = ['notebooks', 'sunglasses']
+
 print(amazon_cart[1])
 
+# List slicing
 
-#List slicing
 #string slicing example
+
 	#string = 'helllooo'
 	#string[0:2:1]
+
 amazon_cart = [
+
 'notebooks', #0
+
 'sunglasses', #1
+
 'toys', #2 
+
 'grapes' #3 
+
 ]
+
 #example of strings being immutable but lists not
+
 #greet = 'hello'
+
 #greet[0] = 'z' - this won't work
+
 #example of creating a new list out of an existing list as lists are mutable
+
 amazon_cart[0] = 'laptop'
+
 new_cart = amazon_cart[0:3]
+
 new_cart[0] = 'gum'
+
 print(new_cart)
+
 print(amazon_cart)
+
 #example of how this is just reassigning value to an existing list 
+
 amazon_cart[0] = 'laptop'
+
 new_cart = amazon_cart #this is not copying but changing/modifying. For copying, one needs to add[:]
+
 new_cart[0] = 'gum'
+
 print(new_cart)
+
 print(amazon_cart)
 
 # Matrix
-# It is a list/array within a list/array. List and array are also different in Python however, most languages means the same when they use list and/or array.  
+
+#It is a list/array within a list/array. List and array are also different in Python however, most languages means the same when they use list and/or array.  
