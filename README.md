@@ -31,15 +31,12 @@ print(6 % 4)
 print(type(2 / 4)) #0.5
 #Integer and Floating points needs to be differentiated so that the interpreter can convert it to the binary correctly. Floating point requires more memory.
 
-
-
 #Math Functions (Actions)
 #rounding up or down
 print(round(3.9))
 #absolute value of the argument (no negative numbers)
 print(abs(-20))
 #don't memorize all the actions - google them
-
 
 #operator precedence
 print(20 - (3 * 4))
@@ -72,7 +69,6 @@ print(a)
 
 iq = 100
 user_age = iq / 5 #RHS is "expression"
-
 
 some_value = 5
 some_value = 5 + 2
