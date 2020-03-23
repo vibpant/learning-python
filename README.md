@@ -321,4 +321,5 @@ new_cart[0] = 'gum'
 print(new_cart)
 print(amazon_cart)
 
-
+# Matrix
+# It is a list/array within a list/array. List and array are also different in Python however, most languages means the same when they use list and/or array.  
