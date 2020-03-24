@@ -411,3 +411,90 @@ print(amazon_cart)
 # Matrix
 
 #It is a list/array within a list/array. List and array are also different in Python however, most languages means the same when they use list and/or array.  
+
+matrix = [
+
+  [1,2,3],
+
+  [2,4,6],
+
+  [7,8,9],
+
+]
+
+print(matrix)
+
+#how to access lists
+
+print(matrix[0][1])
+
+#List Methods: https://www.w3schools.com/python/python_ref_list.asp
+
+basket = [1,2,3,4,5]
+
+print(len(basket))
+
+#using methods
+
+#adding
+
+basket.append(100)
+
+new_list = basket
+
+#print(basket)
+
+print(new_list)
+
+#insert 
+
+#modifies an index within a list. Doesn't copy the list
+
+basket.insert(4, 100)
+
+new_list = basket
+
+#print(basket)
+
+print(new_list)
+
+#extend
+
+new_list = basket.extend([100, 101]) #just remember that this is only extending the basket and not really doing anything to new_list. You need to assign basket to new_list for it to read same as basket. 
+
+print(basket)
+
+new_list = basket
+
+print(new_list)
+
+#pop removes the value from the end of the list/array consecutively if no index is specified. It removes the specified index otherwise. Pop returns the value it removes from the list. 
+
+basket.pop()
+
+basket.pop()
+
+basket.pop(0)
+
+#remove would take the 'value' specified. For example, it would take out all the 4s in the list here. Remove returns none.   
+
+basket_1 = [1,2,3,4,5]
+
+new_list_1 = basket_1.remove(4)
+
+print(new_list_1)
+
+new_list_1 = basket_1.pop(3)
+
+print(new_list_1)
+
+print(basket_1)
+
+#clear. This clears the list and doesn't return anything unless printed.  
+
+basket_2 = [1,2,3,4,5]
+
+new_list_2 = basket_2.clear()
+
+print(basket_2)
+
