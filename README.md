@@ -476,7 +476,7 @@ basket.pop()
 
 basket.pop(0)
 
-#remove would take the 'value' specified. For example, it would take out all the 4s in the list here. Remove returns none.   
+#remove would remove the first occurrence of the 'value' specified. For example, it would take out all the the first occurence of 4 in the list here. Remove returns none.   
 
 basket_1 = [1,2,3,4,5]
 
