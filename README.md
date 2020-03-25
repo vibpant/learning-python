@@ -1,5 +1,6 @@
 # learning-python
 All code learned during Udemy's "Complete Python Developer in 2020 - Zero to Mastery" course.
+```python
 
 # Fundamental Data Types
 
@@ -539,3 +540,4 @@ basket_1.reverse()
 print(basket_1)
   #['d', 'e', 'd', 'c', 'b', 'x', 'a']
 
+```
