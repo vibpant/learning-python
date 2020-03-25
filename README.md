@@ -513,3 +513,28 @@ print('d' in basket)
 #count. Counts occurrences
 
 print(basket.count('d'))
+
+#sort. Sorts the list as per the underlying order. Example: alphabetical order. 
+
+basket = ['a', 'b', 'c', 'd', 'e', 'd']
+
+basket.sort()
+
+print(basket)
+
+#sorted. This creates a new array unlike 'sort' which produces none. Note below how 'basket_1' is not modified but a new array/list was created. 
+
+basket_1 = ['a', 'x', 'b', 'c', 'd', 'e', 'd']
+
+print(sorted(basket_1)) 
+  #['a', 'b', 'c', 'd', 'd', 'e', 'x']
+
+print(basket_1)
+  #['a', 'x', 'b', 'c', 'd', 'e', 'd']
+
+#reverse. Just reverses the index and no sorting occurs
+
+basket_1.reverse()
+
+print(basket_1)
+  #['d', 'e', 'd', 'c', 'b', 'x', 'a']
