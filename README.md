@@ -498,3 +498,18 @@ new_list_2 = basket_2.clear()
 
 print(basket_2)
 
+#index. searches the index of the object specified in the index range
+
+basket = ['a', 'b', 'c', 'd', 'e']
+
+print(basket.index('d'))
+
+print(basket.index('d', 0, 4))
+
+#using 'in' for searching a list. Returns a boolean value
+
+print('d' in basket)
+
+#count. Counts occurrences
+
+print(basket.count('d'))
