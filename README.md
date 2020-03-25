@@ -538,3 +538,4 @@ basket_1.reverse()
 
 print(basket_1)
   #['d', 'e', 'd', 'c', 'b', 'x', 'a']
+
