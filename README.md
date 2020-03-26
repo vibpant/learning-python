@@ -1,4 +1,4 @@
-# learning-python
+# learning-python 👨🏻‍💻🐍</.>
 
 All code learned during Udemy's "Complete Python Developer in 2020 - Zero to Mastery" course.
 
@@ -487,3 +487,54 @@ print(basket_1)
   #['d', 'e', 'd', 'c', 'b', 'x', 'a']
 
 ```
+# Common list patterns
+These tricks are used along with splicing when dealing with lists
+```python
+
+basket_1 = ['a', 'x', 'b', 'c', 'd', 'e', 'd']
+basket_1.sort()
+basket_1.reverse()
+print(basket_1[::-1])
+  #this creates a new   list
+print(basket_1[:])
+  #this creates a copy of the list
+print(basket_1)
+
+#range 
+  #can be used to create a numbered list
+
+print(list(range(1,101))) 
+  #range uses 'index' and not absolute numbers for ranging
+
+#.join
+
+sentence = ' '
+new_sentence = sentence.join(['hi', 'my', 'name', 'is', 'Frank'])
+print(new_sentence)
+  #this creates a new variable and joins the list objects with the variable that is '.join' is applied open
+
+new_sentence_1 = ' '.join(['hi', 'my', 'name', 'is', 'Frank'])
+print(new_sentence_1)
+  #a shorthand way of doing the same
+
+#this is a way to assign variables to each item in a list
+a,b,c = [1,2,3]
+
+print(a)
+print(b)
+print(c)
+
+#list unpacking
+  #more power when assigning variables. Allows for grouping items within a list and assigning it a variable
+
+a,b,c, *other, d = [1,2,3,4,5,6,7,8,9]
+
+print(a)
+print(b)
+print(c)
+print(other)
+print(d)
+
+```
+
+
