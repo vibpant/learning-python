@@ -163,10 +163,12 @@ How to write long string
 ```python
 
 long_string = '''
+
 W0W
 O O
 ---
 '''
+
 print(long_string)
 first_name = "Vibhor"
 last_name = "Pant"
