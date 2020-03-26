@@ -1,39 +1,39 @@
 # learning-python
 All code learned during Udemy's "Complete Python Developer in 2020 - Zero to Mastery" course.
-```python
+
 
 # Fundamental Data Types
 
+```python
+
 int
-
 float
-
 bool
-
 str
-
 list
-
 tuple
-
 set
-
 dict
 
+```
 #Classes -> customer types
 
 #Specialized Data Types
 
+```python
+
 None #used for null values
 
+```
 # Fundamental Data Types - Integers = Whole numbers
 
+```python
+
 print(type(2 + 4))
-
 print(type(2 * 4))
-
 print(type(2 - 4))
 
+```
 # To the power of
 
 print(2 ** 2)
