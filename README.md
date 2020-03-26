@@ -1,9 +1,8 @@
 # learning-python
+
 All code learned during Udemy's "Complete Python Developer in 2020 - Zero to Mastery" course.
 
-
 # Fundamental Data Types
-
 ```python
 
 int
@@ -16,17 +15,15 @@ set
 dict
 
 ```
-#Classes -> customer types
+# Classes -> customer types
 
-#Specialized Data Types
-
+# Specialized Data Types
 ```python
 
 None #used for null values
 
 ```
 # Fundamental Data Types - Integers = Whole numbers
-
 ```python
 
 print(type(2 + 4))
