@@ -538,5 +538,54 @@ print(other)
 print(d)
 
 ```
+#None
+```python
 
+weapons = None
+print(weapons)
 
+```
+# Dictionary
+#dict is a data type and a data structure. It is an unordered key values 
+```python
+
+#example 1
+dictionary = {
+  'a': 1,
+  'b': 2,
+  'x': 3
+}
+
+print(dictionary)
+print(dictionary['x'])
+
+#example 2
+dictionary_1 = {
+  'a': [1,2,3],
+  'b': 'hello',
+  'x': True
+}
+
+print(dictionary_1)
+
+#example 3
+my_list = [{
+  'a': [1,2,3],
+  'b': 'hello',
+  'x': True
+},
+{
+  'a': [4,5,6,],
+  'b': 'hello',
+  'x': True
+},
+{
+  'a': [7,8,9],
+  'b': 'hello',
+  'x': True
+}]
+
+print(my_list[0]['a'][2])
+print(my_list[2]['a'][1])
+
+```
