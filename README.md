@@ -588,4 +588,56 @@ my_list = [{
 print(my_list[0]['a'][2])
 print(my_list[2]['a'][1])
 
+#example :
+  #Dict keys are immutable, therefore, lists can't be used as keys. Keys have to be unique, they can be overwrited.
+
+dictionary = {
+  123: [1,2,3],
+  'greeting': 'hello',
+  'is_Magic': True,
+  True: 'yes',
+  #[100]: 'wrong' 
+    #this would fail
+}
+
+print(dictionary)
+
+#Dictionary Methods
+
+user = {
+  'basket': [1,2,3],
+  'greet': 'hello',
+}
+
+#print(user['age']) 
+  #this would fail
+
+#.get
+
+user_1 = {
+  'basket': [1,2,3],
+  'greet': 'hello',
+}
+
+print(user_1.get('age', 55))
+  #.get assigns the value to the key if it is missing. If the value is there then it would default to that and ignore the value placeholder.  
+
+#example of using dict
+user_2 = dict(name = 'John')
+print(user_2)
+
+#another example of calling values in dictionaries
+print('basket' in user_1)
+
+#example of checking keys, values, clear, and items(list of total). Copy, update, pop and popitem works in the same way and as in lists. 
+
+print('age' in user_1.keys())
+print('hello' in user_1.values())
+print(user.items())
+print(user.clear())
+
 ```
+
+
+
+
