@@ -637,7 +637,40 @@ print(user.items())
 print(user.clear())
 
 ```
+# Tuple
+They work like a list but are immutable like variables.  
+```python 
 
+my_tuple = (1,2,3,4,5)
+print(my_tuple[0])
+print(5 in my_tuple)
+
+```
+Tuples are less flexible. They don't reverse, replace or sort. 
+```python
+
+user = {
+  (1,2): [1,2,3],
+  'greet': 'hello',
+  'age': '20'
+}
+print(user['greet'])
+
+new_tuple = my_tuple[1:2]
+print(new_tuple)
+
+x,y,z, *other = (1,2,3,4,5)
+print(other)
+
+```
+Tuple methods
+```python
+
+print(my_tuple.count(5))
+print(my_tuple.index(5))
+print(len(my_tuple))
+
+```
 
 
 
