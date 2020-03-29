@@ -671,6 +671,66 @@ print(my_tuple.index(5))
 print(len(my_tuple))
 
 ```
+# Set
+Unordered collection of unique objects.  
+```python
+
+my_set = {1,2,3,4,5,5}
+
+print(my_set)
+  #only returns the 'unique' objects. The extra 5 will be omitted.  
+
+my_set.add(100)
+my_set.add(2)
+print(my_set)
+
+my_list = [1,2,3,4,5,5]
+
+print(set(my_list))
+  #Useful when one needs to omit duplicates such as e-mails or usernames.  
+
+print(1 in my_set)
+
+print(len(my_set))
+
+print(list(my_set))
+
+new_set = my_set.copy()
+my_set.clear()
+
+print(new_set)
+print(my_set)
+
+```
+Set methods - https://www.w3schools.com/python/python_ref_set.asp
+```python
+
+my_set_1 = {1,2,3,4,5}
+your_set = {4,5,6,7,8,9,10}
+
+print(my_set_1.difference(your_set))
+
+print(my_set_1.discard(5))
+print(my_set_1)
+
+print(my_set_1.difference_update(your_set))
+print(my_set_1)
+
+print(my_set_1.intersection(your_set))
+  #print(my_set_1 & your_set) works same as above
+
+print(my_set_1.isdisjoint(your_set))
+
+print(my_set_1.issubset(your_set))
+
+print(my_set_1.issuperset(your_set))
+
+print(my_set_1.union(your_set))
+  #print(my_set_1 | your_set) works same as above. 
+
+```
+
+
 
 
 
