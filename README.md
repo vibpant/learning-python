@@ -729,7 +729,63 @@ print(my_set_1.union(your_set))
   #print(my_set_1 | your_set) works same as above. 
 
 ```
+# Conditional Logic
+```python
 
+is_old = False
+is_licensed = True
+
+if is_old and is_licensed:
+    print('you are old enough to drive and you have a license!')
+#elif is_licensed:
+    #print('you can drive now!')
+else:
+    print('you are not old enough to drive.')
+
+print('ook')
+
+```
+Indentation creates nested code
+
+Truthy Falsy: https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false
+
+Ternary Operator or Conditional Expressions
+These are shortcuts
+```python
+
+#condition_if_true if condition else condition_if_false
+
+is_friend = True
+can_message = "message allowed" if is_friend else "not allowed to message"
+
+print(can_message)
+
+```
+Short Circuiting
+```python
+
+is_Friend = True
+is_User = True
+
+if is_Friend and is_User:
+  print('best friends forever')
+
+```
+Logical operator examples
+```python
+
+print(4 == 5)
+print(4 < 5)
+print('a' < 'b')
+print('a' < 'A')
+print(1 < 2 < 3 < 4)
+print(1 >= 0)
+print(0 != 0)
+  #not equal to  
+print(not(True))
+print(not(1 == 1))
+
+```
 
 
 
