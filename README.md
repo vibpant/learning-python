@@ -826,6 +826,30 @@ for variable_3 in (1, 2, 3, 4, 5):
     print(variable_3)
 
 ```
+Dictionaries
+```python
+
+user = {
+  'name': 'Golem', 
+  'age': 5006, 
+  'can_swim': False
+  }
+
+for i in user:
+    print(i)
+
+for i in user.items():
+    print(i)
+
+for i in user.values():
+    print(i)
+
+for i in user.keys():
+    print(i)
+
+for key, value in user.items():
+    print(key, value)
+
 Example
 ```python
 
@@ -849,29 +873,6 @@ Iterable(noun): object or collection that can be iterated over - list, dictionar
 
 Iterate(verb): means that we can go one by one check each item in the collection.
 
-Using Dictionaries with For loops:
-```python
-
-user = {
-  'name': 'Golem', 
-  'age': 5006, 
-  'can_swim': False
-  }
-
-for i in user:
-    print(i)
-
-for i in user.items():
-    print(i)
-
-for i in user.values():
-    print(i)
-
-for i in user.keys():
-    print(i)
-
-for key, value in user.items():
-    print(key, value)
 
 ```
 
