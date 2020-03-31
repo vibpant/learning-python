@@ -748,7 +748,18 @@ print('ook')
 Indentation creates nested code
 
 Truthy Falsy: https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false
+```python
 
+print(True == 1) #True
+print('1' == 1) #False
+print([] == 1) #False
+print(10 == 10.0) #True
+print([] == []) #True
+
+# == checks for the inherent Value. 
+# 'is' checks for what is stored in the memory. 
+
+```
 Ternary Operator or Conditional Expressions
 These are shortcuts
 ```python
@@ -786,6 +797,8 @@ print(not(True))
 print(not(1 == 1))
 
 ```
+
+
 
 
 
