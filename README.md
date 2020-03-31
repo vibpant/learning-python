@@ -797,7 +797,80 @@ print(not(True))
 print(not(1 == 1))
 
 ```
+# For Loops
+String
+```python
 
+for variable in 'Zero to Mastery':
+    print(variable)
+
+```
+List
+```python
+
+for variable_1 in [1, 2, 3, 4, 5]:
+    print(variable_1)
+
+```
+Set
+```python
+
+for variable_2 in {1, 2, 3, 4, 5}:
+    print(variable_2)
+    
+```
+Tuple
+```python
+
+for variable_3 in (1, 2, 3, 4, 5):
+    print(variable_3)
+
+```
+Example
+```python
+
+for item in ('a', 'c', 'f', 'b'):
+    print(item)
+    print(item)
+    print(item)
+    print(item)
+    print(item)
+print(item)
+
+```
+Example of nested loops
+```python
+
+for item_1 in (1, 2, 3, 4, 5):
+    for x in ['a', 'b', 'c']:
+        print(item_1, x)
+```
+Iterable(noun): object or collection that can be iterated over - list, dictionary, tuple, set, string
+Iterate(verb): means that we can go one by one check each item in the collection.
+```python
+
+user = {
+  'name': 'Golem', 
+  'age': 5006, 
+  'can_swim': False
+  }
+
+for i in user:
+    print(i)
+
+for i in user.items():
+    print(i)
+
+for i in user.values():
+    print(i)
+
+for i in user.keys():
+    print(i)
+
+for key, value in user.items():
+    print(key, value)
+
+```
 
 
 
