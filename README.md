@@ -850,6 +850,7 @@ for i in user.keys():
 for key, value in user.items():
     print(key, value)
 
+```
 Example
 ```python
 
@@ -868,15 +869,8 @@ Example of nested loops
 for item_1 in (1, 2, 3, 4, 5):
     for x in ['a', 'b', 'c']:
         print(item_1, x)
+	
 ```
 Iterable(noun): object or collection that can be iterated over - list, dictionary, tuple, set, string
 
 Iterate(verb): means that we can go one by one check each item in the collection.
-
-
-```
-
-
-
-
-
