@@ -846,7 +846,10 @@ for item_1 in (1, 2, 3, 4, 5):
         print(item_1, x)
 ```
 Iterable(noun): object or collection that can be iterated over - list, dictionary, tuple, set, string
+
 Iterate(verb): means that we can go one by one check each item in the collection.
+
+Usind Dictionaries with For loops
 ```python
 
 user = {
