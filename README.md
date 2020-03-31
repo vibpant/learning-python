@@ -849,7 +849,7 @@ Iterable(noun): object or collection that can be iterated over - list, dictionar
 
 Iterate(verb): means that we can go one by one check each item in the collection.
 
-Usind Dictionaries with For loops
+Using Dictionaries with For loops:
 ```python
 
 user = {
