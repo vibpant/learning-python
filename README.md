@@ -875,11 +875,13 @@ Iterable(noun): object or collection that can be iterated over - list, dictionar
 
 Iterate(verb): means that we can go one by one check each item in the collection.
 
+# 
+
 Using range with loops
 
 A range is a collection of objects or an iterable in this context
 
-Examples
+Examples:
 ```python
 
 for _ in range(2):
