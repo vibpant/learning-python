@@ -874,3 +874,31 @@ for item_1 in (1, 2, 3, 4, 5):
 Iterable(noun): object or collection that can be iterated over - list, dictionary, tuple, set, string
 
 Iterate(verb): means that we can go one by one check each item in the collection.
+
+Using range with loops
+
+A range is a collection of objects or an iterable in this context
+
+Examples
+```python
+
+for _ in range(2):
+  print(_)
+
+for _ in range(1, 11):
+  print(_)
+
+for _ in range(1, 11, 2):
+  print(_)
+
+for _ in range(11, 0, -1):
+  print(_)
+
+for _ in range(11, 0, -2):
+  print(_)
+
+for _ in range(2):
+  print(list(range(10)))
+  #note how this prints out a list ranging from 0 to 9 (index 10) twice as the iterable is a range of 2
+
+```
