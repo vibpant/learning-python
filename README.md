@@ -904,3 +904,28 @@ for _ in range(2):
   #note how this prints out a list ranging from 0 to 9 (index 10) twice as the iterable is a range of 2
 
 ```
+# Enumerate
+Used like range but its not common. It results in an index, value pair which can be sliced and manipulated. 
+```python
+
+for i,char in enumerate('Hellooo'):
+  print(i, char)
+  #note how this spits out the index of the objects. 
+
+```
+Example:
+```python
+
+user_input = int(input('Which index?\n'))
+for i,char in enumerate(list(range(100))):
+  if char == user_input:
+    print(f'index of {char} is: {i}')
+
+```
+
+
+
+
+
+
+
