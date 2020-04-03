@@ -967,15 +967,52 @@ while True:
     break
 
 ```
-Continue and Pass
-# 
+Continue and Pass:
+
 Continue: continues the loop until the loop ends and the next in line code never runs. 
 
 Pass: does nothing, just lets the code move ahead. Used as a placeholder during developement but not in production code. Useful in place of comments sometime to allow for the code to run at the current iteration.  
 
 
+# What is good code?
+Clean, readable, predictable and DRY (Don't Repeat Yourself: no repetition, code should be reusable).  
 
+Example of a code:
+```python
 
+picture = [
+  [0, 0, 0, 1, 0, 0, 0], 
+  [0, 0, 1, 1, 1, 0, 0], 
+  [0, 1, 1, 1, 1, 1, 0],
+  [1, 1, 1, 1, 1, 1, 1], 
+  [0, 0, 0, 1, 0, 0, 0], 
+  [0, 0, 0, 1, 0, 0, 0]
+  ]
+
+for row in picture:
+    for pixel in row:
+        if (pixel == 1):
+            print('*', end='')
+        else:
+            print(' ', end='')
+    print('')
+
+```
+Better version of the code above: 
+```python
+
+fill = '.'
+empty = ' '
+
+for row in picture:
+  for pixel in row:
+    if(pixel):
+      print(fill, end= '')
+    else:
+      print(empty, end= '')
+  print('')
+
+```
 
 
 
