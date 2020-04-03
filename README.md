@@ -922,6 +922,60 @@ for i,char in enumerate(list(range(100))):
     print(f'index of {char} is: {i}')
 
 ```
+# While Loops
+Remember to add a break or a condition to break the loop or avoid the infinite loops 
+```python
+
+#while condition:
+  #do something
+
+# i = 0
+# while i < 51:
+#   print(i)
+#   i += 1
+# else:
+#   print('done with all the work')
+
+```
+For and While loop comparison. Results the same
+```python
+
+my_list = [1,2,3]
+for item in my_list:
+  print(item)
+
+a = 0
+while a < len(my_list):
+  print(my_list[a])
+  a += 1
+
+```
+For simple loops - 'for' loops are great. 
+
+If you're not sure how long the loop is going to be, use while. 
+
+Common while loop usage
+```python
+
+# while True:
+#   input('say something: ')
+#   break
+
+while True:
+  response = input('say something: ')
+  if (response == 'bye') or (response == 'see ya'):
+    break
+
+```
+Continue and Pass
+# 
+Continue: continues the loop until the loop ends and the next in line code never runs. 
+
+Pass: does nothing, just lets the code move ahead. Used as a placeholder during developement but not in production code. Useful in place of comments sometime to allow for the code to run at the current iteration.  
+
+
+
+
 
 
 
