@@ -1013,6 +1013,39 @@ for row in picture:
   print('')
 
 ```
+# Functions
+
+'def' is used to define your own functions which can be then run later on 
+
+() brackets indicate it to the interpreter that some action will be taken on this function. 
+
+Functions come in handy to keep the code DRY and also for ease of usage of complex loops etc.  
+
+If a function is run above the line where it is declared then it will results in an error.  
+
+Example:
+```python
+
+def say_hello():
+  print('hello!')
+
+say_hello()
+
+```
+Function parameters: creating variables within a function
+
+Function arguments: calling or invoking the function by assigning arguments(value) for the parameters(variables)
+
+Example:
+```python
+
+def say_hello_again(name, emoji):
+  print(f'hello {name} {emoji} !')
+
+say_hello_again('Poopy', '💩')
+
+```
+
 
 
 
