@@ -1,4 +1,4 @@
-# learning-python
+# learning-python 👨🏻‍💻🐍</.>
 
 All code learned during Udemy's "Complete Python Developer in 2020 - Zero to Mastery" course.
 
@@ -163,10 +163,12 @@ How to write long string
 ```python
 
 long_string = '''
+
 W0W
 O O
 ---
 '''
+
 print(long_string)
 first_name = "Vibhor"
 last_name = "Pant"
@@ -487,3 +489,534 @@ print(basket_1)
   #['d', 'e', 'd', 'c', 'b', 'x', 'a']
 
 ```
+# Common list patterns
+These tricks are used along with splicing when dealing with lists
+```python
+
+basket_1 = ['a', 'x', 'b', 'c', 'd', 'e', 'd']
+basket_1.sort()
+basket_1.reverse()
+print(basket_1[::-1])
+  #this creates a new   list
+print(basket_1[:])
+  #this creates a copy of the list
+print(basket_1)
+
+#range 
+  #can be used to create a numbered list
+
+print(list(range(1,101))) 
+  #range uses 'index' and not absolute numbers for ranging
+
+#.join
+
+sentence = ' '
+new_sentence = sentence.join(['hi', 'my', 'name', 'is', 'Frank'])
+print(new_sentence)
+  #this creates a new variable and joins the list objects with the variable that is '.join' is applied open
+
+new_sentence_1 = ' '.join(['hi', 'my', 'name', 'is', 'Frank'])
+print(new_sentence_1)
+  #a shorthand way of doing the same
+
+#this is a way to assign variables to each item in a list
+a,b,c = [1,2,3]
+
+print(a)
+print(b)
+print(c)
+
+#list unpacking
+  #more power when assigning variables. Allows for grouping items within a list and assigning it a variable
+
+a,b,c, *other, d = [1,2,3,4,5,6,7,8,9]
+
+print(a)
+print(b)
+print(c)
+print(other)
+print(d)
+
+```
+#None
+```python
+
+weapons = None
+print(weapons)
+
+```
+# Dictionary
+#dict is a data type and a data structure. It is an unordered key values 
+```python
+
+#example 1
+dictionary = {
+  'a': 1,
+  'b': 2,
+  'x': 3
+}
+
+print(dictionary)
+print(dictionary['x'])
+
+#example 2
+dictionary_1 = {
+  'a': [1,2,3],
+  'b': 'hello',
+  'x': True
+}
+
+print(dictionary_1)
+
+#example 3
+my_list = [{
+  'a': [1,2,3],
+  'b': 'hello',
+  'x': True
+},
+{
+  'a': [4,5,6,],
+  'b': 'hello',
+  'x': True
+},
+{
+  'a': [7,8,9],
+  'b': 'hello',
+  'x': True
+}]
+
+print(my_list[0]['a'][2])
+print(my_list[2]['a'][1])
+
+#example :
+  #Dict keys are immutable, therefore, lists can't be used as keys. Keys have to be unique, they can be overwrited.
+
+dictionary = {
+  123: [1,2,3],
+  'greeting': 'hello',
+  'is_Magic': True,
+  True: 'yes',
+  #[100]: 'wrong' 
+    #this would fail
+}
+
+print(dictionary)
+
+#Dictionary Methods
+
+user = {
+  'basket': [1,2,3],
+  'greet': 'hello',
+}
+
+#print(user['age']) 
+  #this would fail
+
+#.get
+
+user_1 = {
+  'basket': [1,2,3],
+  'greet': 'hello',
+}
+
+print(user_1.get('age', 55))
+  #.get assigns the value to the key if it is missing. If the value is there then it would default to that and ignore the value placeholder.  
+
+#example of using dict
+user_2 = dict(name = 'John')
+print(user_2)
+
+#another example of calling values in dictionaries
+print('basket' in user_1)
+
+#example of checking keys, values, clear, and items(list of total). Copy, update, pop and popitem works in the same way and as in lists. 
+
+print('age' in user_1.keys())
+print('hello' in user_1.values())
+print(user.items())
+print(user.clear())
+
+```
+# Tuple
+They work like a list but are immutable like variables.  
+```python 
+
+my_tuple = (1,2,3,4,5)
+print(my_tuple[0])
+print(5 in my_tuple)
+
+```
+Tuples are less flexible. They don't reverse, replace or sort. 
+```python
+
+user = {
+  (1,2): [1,2,3],
+  'greet': 'hello',
+  'age': '20'
+}
+print(user['greet'])
+
+new_tuple = my_tuple[1:2]
+print(new_tuple)
+
+x,y,z, *other = (1,2,3,4,5)
+print(other)
+
+```
+Tuple methods
+```python
+
+print(my_tuple.count(5))
+print(my_tuple.index(5))
+print(len(my_tuple))
+
+```
+# Set
+Unordered collection of unique objects.  
+```python
+
+my_set = {1,2,3,4,5,5}
+
+print(my_set)
+  #only returns the 'unique' objects. The extra 5 will be omitted.  
+
+my_set.add(100)
+my_set.add(2)
+print(my_set)
+
+my_list = [1,2,3,4,5,5]
+
+print(set(my_list))
+  #Useful when one needs to omit duplicates such as e-mails or usernames.  
+
+print(1 in my_set)
+
+print(len(my_set))
+
+print(list(my_set))
+
+new_set = my_set.copy()
+my_set.clear()
+
+print(new_set)
+print(my_set)
+
+```
+Set methods - https://www.w3schools.com/python/python_ref_set.asp
+```python
+
+my_set_1 = {1,2,3,4,5}
+your_set = {4,5,6,7,8,9,10}
+
+print(my_set_1.difference(your_set))
+
+print(my_set_1.discard(5))
+print(my_set_1)
+
+print(my_set_1.difference_update(your_set))
+print(my_set_1)
+
+print(my_set_1.intersection(your_set))
+  #print(my_set_1 & your_set) works same as above
+
+print(my_set_1.isdisjoint(your_set))
+
+print(my_set_1.issubset(your_set))
+
+print(my_set_1.issuperset(your_set))
+
+print(my_set_1.union(your_set))
+  #print(my_set_1 | your_set) works same as above. 
+
+```
+# Conditional Logic
+```python
+
+is_old = False
+is_licensed = True
+
+if is_old and is_licensed:
+    print('you are old enough to drive and you have a license!')
+#elif is_licensed:
+    #print('you can drive now!')
+else:
+    print('you are not old enough to drive.')
+
+print('ook')
+
+```
+Indentation creates nested code
+
+Truthy Falsy: https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false
+```python
+
+print(True == 1) #True
+print('1' == 1) #False
+print([] == 1) #False
+print(10 == 10.0) #True
+print([] == []) #True
+
+# == checks for the inherent Value. 
+# 'is' checks for what is stored in the memory. 
+
+```
+Ternary Operator or Conditional Expressions
+These are shortcuts
+```python
+
+#condition_if_true if condition else condition_if_false
+
+is_friend = True
+can_message = "message allowed" if is_friend else "not allowed to message"
+
+print(can_message)
+
+```
+Short Circuiting
+```python
+
+is_Friend = True
+is_User = True
+
+if is_Friend and is_User:
+  print('best friends forever')
+
+```
+Logical operator examples
+```python
+
+print(4 == 5)
+print(4 < 5)
+print('a' < 'b')
+print('a' < 'A')
+print(1 < 2 < 3 < 4)
+print(1 >= 0)
+print(0 != 0)
+  #not equal to  
+print(not(True))
+print(not(1 == 1))
+
+```
+# For Loops
+String
+```python
+
+for variable in 'Zero to Mastery':
+    print(variable)
+
+```
+List
+```python
+
+for variable_1 in [1, 2, 3, 4, 5]:
+    print(variable_1)
+
+```
+Set
+```python
+
+for variable_2 in {1, 2, 3, 4, 5}:
+    print(variable_2)
+    
+```
+Tuple
+```python
+
+for variable_3 in (1, 2, 3, 4, 5):
+    print(variable_3)
+
+```
+Dictionaries
+```python
+
+user = {
+  'name': 'Golem', 
+  'age': 5006, 
+  'can_swim': False
+  }
+
+for i in user:
+    print(i)
+
+for i in user.items():
+    print(i)
+
+for i in user.values():
+    print(i)
+
+for i in user.keys():
+    print(i)
+
+for key, value in user.items():
+    print(key, value)
+
+```
+Example
+```python
+
+for item in ('a', 'c', 'f', 'b'):
+    print(item)
+    print(item)
+    print(item)
+    print(item)
+    print(item)
+print(item)
+
+```
+Example of nested loops
+```python
+
+for item_1 in (1, 2, 3, 4, 5):
+    for x in ['a', 'b', 'c']:
+        print(item_1, x)
+	
+```
+Iterable(noun): object or collection that can be iterated over - list, dictionary, tuple, set, string
+
+Iterate(verb): means that we can go one by one check each item in the collection.
+
+# 
+
+Using range with loops
+
+A range is a collection of objects or an iterable in this context
+
+Examples:
+```python
+
+for _ in range(2):
+  print(_)
+
+for _ in range(1, 11):
+  print(_)
+
+for _ in range(1, 11, 2):
+  print(_)
+
+for _ in range(11, 0, -1):
+  print(_)
+
+for _ in range(11, 0, -2):
+  print(_)
+
+for _ in range(2):
+  print(list(range(10)))
+  #note how this prints out a list ranging from 0 to 9 (index 10) twice as the iterable is a range of 2
+
+```
+# Enumerate
+Used like range but its not common. It results in an index, value pair which can be sliced and manipulated. 
+```python
+
+for i,char in enumerate('Hellooo'):
+  print(i, char)
+  #note how this spits out the index of the objects. 
+
+```
+Example:
+```python
+
+user_input = int(input('Which index?\n'))
+for i,char in enumerate(list(range(100))):
+  if char == user_input:
+    print(f'index of {char} is: {i}')
+
+```
+# While Loops
+Remember to add a break or a condition to break the loop or avoid the infinite loops 
+```python
+
+#while condition:
+  #do something
+
+# i = 0
+# while i < 51:
+#   print(i)
+#   i += 1
+# else:
+#   print('done with all the work')
+
+```
+For and While loop comparison. Results the same
+```python
+
+my_list = [1,2,3]
+for item in my_list:
+  print(item)
+
+a = 0
+while a < len(my_list):
+  print(my_list[a])
+  a += 1
+
+```
+For simple loops - 'for' loops are great. 
+
+If you're not sure how long the loop is going to be, use while. 
+
+Common while loop usage
+```python
+
+# while True:
+#   input('say something: ')
+#   break
+
+while True:
+  response = input('say something: ')
+  if (response == 'bye') or (response == 'see ya'):
+    break
+
+```
+Continue and Pass:
+
+Continue: continues the loop until the loop ends and the next in line code never runs. 
+
+Pass: does nothing, just lets the code move ahead. Used as a placeholder during developement but not in production code. Useful in place of comments sometime to allow for the code to run at the current iteration.  
+
+
+# What is good code?
+Clean, readable, predictable and DRY (Don't Repeat Yourself: no repetition, code should be reusable).  
+
+Example of a code:
+```python
+
+picture = [
+  [0, 0, 0, 1, 0, 0, 0], 
+  [0, 0, 1, 1, 1, 0, 0], 
+  [0, 1, 1, 1, 1, 1, 0],
+  [1, 1, 1, 1, 1, 1, 1], 
+  [0, 0, 0, 1, 0, 0, 0], 
+  [0, 0, 0, 1, 0, 0, 0]
+  ]
+
+for row in picture:
+    for pixel in row:
+        if (pixel == 1):
+            print('*', end='')
+        else:
+            print(' ', end='')
+    print('')
+
+```
+Better version of the code above: 
+```python
+
+fill = '.'
+empty = ' '
+
+for row in picture:
+  for pixel in row:
+    if(pixel):
+      print(fill, end= '')
+    else:
+      print(empty, end= '')
+  print('')
+
+```
+
+
+
+
+
+
+
