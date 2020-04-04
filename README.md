@@ -1068,8 +1068,41 @@ def say_hello_now(name='Boring', emoji='😒'):
 say_hello_now()
 
 ```
+# 
+Return:
 
+Functions always should return something otherwise once ran they will result in 'None'
 
+Function either modifies something or returns something. 
+
+Function should do one thing really well and usually should return something. 
+
+Return would always exit the function. 
+
+Example of return:
+```python
+
+def sum(num1, num2):
+  return num1 + num2
+
+total = sum(5, 10)
+
+print(sum(5, total))
+
+```
+Complicated example of return:
+```python
+
+def sum_1(n_1, n_2):
+  def sum_2(s1, s2):
+    return s1 + s2
+  return sum_2(n_1, n_2)
+
+total_1 = sum_1(10, 10)
+
+print(sum_1(10, total_1))
+
+```
 
 
 
