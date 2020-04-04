@@ -1045,8 +1045,29 @@ def say_hello_again(name, emoji):
 say_hello_again('Poopy', '💩')
 
 ```
+# 
+Positional arguments:
 
+Arguments require to be in the right position. They are locked to the position of the variable and one comes after the first.  
 
+Keyword arguments:
+
+Arguments that are given with the keyword (variable) and don't need to be positioned as per the defined function. However, this is considered as a negative practice because it creates unnecessary confusion for the reader of the code. As much as possible, right order must be followed.
+```python
+
+say_hello_again(emoji='😛', name='Tangy')
+
+```
+Default parameters:
+
+These are parameters(variables) within a function that work as a default or a placeholder when no argument is given.
+```python
+
+def say_hello_now(name='Boring', emoji='😒'):
+  print(f'hello {name} {emoji} !')
+say_hello_now()
+
+```
 
 
 
