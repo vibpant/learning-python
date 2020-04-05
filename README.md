@@ -1210,9 +1210,12 @@ Function scope refers to the variable that are assigned inside of a defined fuct
 
 Scope rules hierarchy:
 
-#1 - Starts with local scope or functional scope. 
+#1 - Starts with local scope or functional scope
+
 #2 - Goes to the parent local if there is one
+
 #3 - Goes to global 
+
 #4 - built in python functions. 
 # 
 Global keyword
