@@ -1013,9 +1013,259 @@ for row in picture:
   print('')
 
 ```
+Another example:
 
+Original version
+```python
 
+def is_even_1(num_1):
+  if num_1 % 2 == 0:
+    return True
+  elif num_1 % 2 != 2:
+    return False
 
+```
+Cleaner version
+```python
+
+def is_even(num):
+  return num % 2 == 0
+
+print(is_even(51))
+
+```
+# Functions
+
+'def' is used to define your own functions which can be then run later on 
+
+() brackets indicate it to the interpreter that some action will be taken on this function. 
+
+Functions come in handy to keep the code DRY and also for ease of usage of complex loops etc.  
+
+If a function is run above the line where it is declared then it will results in an error.  
+
+Example:
+```python
+
+def say_hello():
+  print('hello!')
+
+say_hello()
+
+```
+Function parameters: creating variables within a function
+
+Function arguments: calling or invoking the function by assigning arguments(value) for the parameters(variables)
+
+Example:
+```python
+
+def say_hello_again(name, emoji):
+  print(f'hello {name} {emoji} !')
+
+say_hello_again('Poopy', '💩')
+
+```
+# 
+Positional arguments:
+
+Arguments require to be in the right position. They are locked to the position of the variable and one comes after the first.  
+
+Keyword arguments:
+
+Arguments that are given with the keyword (variable) and don't need to be positioned as per the defined function. However, this is considered as a negative practice because it creates unnecessary confusion for the reader of the code. As much as possible, right order must be followed.
+```python
+
+say_hello_again(emoji='😛', name='Tangy')
+
+```
+Default parameters:
+
+These are parameters(variables) within a function that work as a default or a placeholder when no argument is given.
+```python
+
+def say_hello_now(name='Boring', emoji='😒'):
+  print(f'hello {name} {emoji} !')
+say_hello_now()
+
+```
+# 
+Return:
+
+Functions always should return something otherwise once ran they will result in 'None'
+
+Function either modifies something or returns something. 
+
+Function should do one thing really well and usually should return something. 
+
+Return would always exit the function. 
+
+Example of return:
+```python
+
+def sum(num1, num2):
+  return num1 + num2
+
+total = sum(5, 10)
+
+print(sum(5, total))
+
+```
+Complicated example of return:
+```python
+
+def sum_1(n_1, n_2):
+  def sum_2(s1, s2):
+    return s1 + s2
+  return sum_2(n_1, n_2)
+
+total_1 = sum_1(10, 10)
+
+print(sum_1(10, total_1))
+
+```
+# Methods vs Functions
+
+Both are actions - the difference is how you use them. 
+
+Functions are called by using brackets. They are either pre-defined within Python or can be defined by the coder using 'def'
+
+print()
+list()
+
+Methods are used by using a '.' and data types can use certain methods to action 
+
+print('hellooo'.capitalize())
+
+Whatever is to the left to the dot (.) owns the method. They are owned by the object or the data type. 
+
+Methods can be learned about from Python 3 documentation. Googling it would work too. 
+# 
+Docstrings
+
+It allows us to comment inside of the function (within the IDE or the editor program and not just using #). It helps with code collaboration. 
+
+Example:
+```python
+
+def test(a):
+  '''
+  Info: This function prints the parameter a
+  '''
+  print(a)
+
+#Calling the info:
+
+help(test)
+
+#or
+
+print(test.__doc__)
+
+```
+# *args and **kwargs
+
+These are used to give multiple arguments to a defined function
+
+*args would grab the positional argumetns
+
+**kwargs would grab the keyword arguments (here the position doesn't matter)
+
+kwargs return in to a dictionary with key/value pairs
+
+Example:
+```python
+
+def super_func(*args, **kwargs):
+  total = 0
+  for item in kwargs.values():
+    total += item
+  return sum(args) + total
+
+print(super_func(1,2,3,4,5, num1=5, num2=10))
+
+```
+Ordering rule when writing parameters in a function: params, *args, default parameters, **kwargs
+
+Exercise:
+```python
+
+def highest_even(li):
+  li_1 = []
+  for item in li:
+    if item % 2 == 0:
+      li_1.append(item)
+  return max(li_1)
+  
+print(highest_even([10,2,3,4,8,11,200]))
+
+```
+# Scope in coding
+
+Scope defines: What variables do I have access to?
+
+Scope in python has 'functional scope' or 'global scope'
+
+Function scope refers to the variable that are assigned inside of a defined fuction
+
+Scope rules hierarchy:
+
+#1 - Starts with local scope or functional scope
+
+#2 - Goes to the parent local if there is one
+
+#3 - Goes to global 
+
+#4 - built in python functions. 
+# 
+Global keyword
+
+Example of how a global variable can be called within a defined function. 
+```python
+
+total = 0
+
+def count():
+  global total
+  total += 1
+  return total
+
+print(count())
+
+```
+Another way of doing the above:
+```python
+
+total_1 = 0
+
+def count_1(total_1):
+  total_1 += 1
+  return total_1
+
+print(count_1(count_1(count_1(total_1))))
+
+```
+Non-local keyword: This is used to refer to the parent variable
+
+Example of non local
+```python
+
+def outer():
+  x = 'local'
+  def inner():
+    nonlocal x
+    x = 'nonlocal'
+    print('inner: ', x)
+
+  inner() 
+  print("outer: ", x)
+
+```
+Why do we need scope?
+
+Due to the limitations of the machines. When scopes are managed locally, non-locally (parent) and/or globally, memory resources are used efficiently.  
+
+Python empties the memory taken by local and non-local(parent) variables. 
 
 
 
