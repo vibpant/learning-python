@@ -1163,6 +1163,30 @@ help(test)
 print(test.__doc__)
 
 ```
+# *args and **kwargs
+
+These are used to give multiple arguments to a defined function
+
+*args would grab the positional argumetns
+
+**kwargs would grab the keyword arguments (here the position doesn't matter)
+
+kwargs return in to a dictionary with key/value pairs
+
+Example:
+```python
+
+def super_func(*args, **kwargs):
+  total = 0
+  for item in kwargs.values():
+    total += item
+  return sum(args) + total
+
+print(super_func(1,2,3,4,5, num1=5, num2=10))
+
+```
+Ordering rule when writing parameters in a function: params, *args, default parameters, **kwargs
+
 
 
 
