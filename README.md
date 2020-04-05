@@ -1187,6 +1187,19 @@ print(super_func(1,2,3,4,5, num1=5, num2=10))
 ```
 Ordering rule when writing parameters in a function: params, *args, default parameters, **kwargs
 
+Exercise:
+```python
+
+def highest_even(li):
+  li_1 = []
+  for item in li:
+    if item % 2 == 0:
+      li_1.append(item)
+  return max(li_1)
+  
+print(highest_even([10,2,3,4,8,11,200]))
+
+```
 
 
 
