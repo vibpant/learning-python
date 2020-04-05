@@ -1013,6 +1013,27 @@ for row in picture:
   print('')
 
 ```
+Another example:
+
+Original version
+```python
+
+def is_even_1(num_1):
+  if num_1 % 2 == 0:
+    return True
+  elif num_1 % 2 != 2:
+    return False
+
+```
+Cleaner version
+```python
+
+def is_even(num):
+  return num % 2 == 0
+
+print(is_even(51))
+
+```
 # Functions
 
 'def' is used to define your own functions which can be then run later on 
@@ -1103,7 +1124,45 @@ total_1 = sum_1(10, 10)
 print(sum_1(10, total_1))
 
 ```
+# Methods vs Functions
 
+Both are actions - the difference is how you use them. 
+
+Functions are called by using brackets. They are either pre-defined within Python or can be defined by the coder using 'def'
+
+print()
+list()
+
+Methods are used by using a '.' and data types can use certain methods to action 
+
+print('hellooo'.capitalize())
+
+Whatever is to the left to the dot (.) owns the method. They are owned by the object or the data type. 
+
+Methods can be learned about from Python 3 documentation. Googling it would work too. 
+# 
+Docstrings
+
+It allows us to comment inside of the function (within the IDE or the editor program and not just using #). It helps with code collaboration. 
+
+Example:
+```python
+
+def test(a):
+  '''
+  Info: This function prints the parameter a
+  '''
+  print(a)
+
+#Calling the info:
+
+help(test)
+
+#or
+
+print(test.__doc__)
+
+```
 
 
 
