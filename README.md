@@ -1200,6 +1200,70 @@ def highest_even(li):
 print(highest_even([10,2,3,4,8,11,200]))
 
 ```
+# Scope in coding
+
+Scope defines: What variables do I have access to?
+
+Scope in python has 'functional scope' or 'global scope'
+
+Function scope refers to the variable that are assigned inside of a defined fuction
+
+Scope rules hierarchy:
+
+#1 - Starts with local scope or functional scope. 
+#2 - Goes to the parent local if there is one
+#3 - Goes to global 
+#4 - built in python functions. 
+# 
+Global keyword
+
+Example of how a global variable can be called within a defined function. 
+```python
+
+total = 0
+
+def count():
+  global total
+  total += 1
+  return total
+
+print(count())
+
+```
+Another way of doing the above:
+```python
+
+total_1 = 0
+
+def count_1(total_1):
+  total_1 += 1
+  return total_1
+
+print(count_1(count_1(count_1(total_1))))
+
+```
+Non-local keyword: This is used to refer to the parent variable
+
+Example of non local
+```python
+
+def outer():
+  x = 'local'
+  def inner():
+    nonlocal x
+    x = 'nonlocal'
+    print('inner: ', x)
+
+  inner() 
+  print("outer: ", x)
+
+```
+Why do we need scope?
+
+Due to the limitations of the machines. When scopes are managed locally, non-locally (parent) and/or globally, memory resources are used efficiently.  
+
+Python empties the memory taken by local and non-local(parent) variables. 
+
 
 
 
