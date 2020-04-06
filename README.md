@@ -1309,7 +1309,8 @@ print(player1)
 print(player1.name)
 
 ```
-# OOP Exercise
+#
+OOP Exercise
 ```python
 
 class Cat:
@@ -1329,7 +1330,36 @@ def oldest_cat(*args):
 print(f"The oldest cat is {oldest_cat(cat1.age, cat2.age, cat3.age)} years old")
 
 ```
+Methods within class:
+```python
 
+class PlayerCharacter:
+    membership = True # This is a class object attribute
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        if (int(age) > 18):
+            print("You can play this game, what is your name and age?")
+        else:
+            print("You cannot play this game")
+    
+    def shout(self):
+        print(f'Your name is {self.name} and age is {self.age}')
 
+# Example of class method
+
+    @classmethod
+    def adding(cls, num1, num2): #cls stands for class
+        return cls('Teddy', num1 + num2)
+    
+#Example of static method
+    
+    @staticmethod
+    def adding_1(num_1, num_2):
+        return num_1 + num_2
+    
+print(PlayerCharacter.adding(10, 10))
+
+```
 
 
