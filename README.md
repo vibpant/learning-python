@@ -1267,6 +1267,47 @@ Due to the limitations of the machines. When scopes are managed locally, non-loc
 
 Python empties the memory taken by local and non-local(parent) variables. 
 
+# Object Oriented Programming (OOP)
+Examples of built in classes (or data types and structures in Python)
+```python
 
+print(type(None))
+print(type(True))
+print(type(5))
+print(type(5.5))
+print(type('hi'))
+print(type([]))
+print(type(()))
+print(type({}))
+
+```
+Class names are capitalized and camel case is used
+```python
+
+class BigObject:
+    pass
+
+
+obj1 = BigObject()  # double-bracket means that you are instantiating the class.
+obj2 = BigObject()
+obj3 = BigObject()
+
+print(type(obj1))
+
+
+class PlayerCharacter:
+    def __init__(self, name):
+        self.name = name
+
+    def run(self):
+        print('run')
+
+
+player1 = PlayerCharacter('Cindy')
+
+print(player1)
+print(player1.name)
+
+```
 
 
