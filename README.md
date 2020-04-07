@@ -1431,3 +1431,57 @@ for char in [wizard1, archer1]:
 char.attack()
 
 ```
+Class, objects, and four pillars of OOP - An exercise
+```python
+
+class Pets:
+    animals = []
+
+    def __init__(self, animals):
+        self.animals = animals
+
+    def walk(self):
+        for animal in self.animals:
+            print(animal.walk())
+
+
+class Cat:
+    is_lazy = True
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def walk(self):
+        return f'{self.name} is just walking around'
+
+
+class Simon(Cat):
+    @staticmethod
+    def sing(sounds):
+        return f'{sounds}'
+
+
+class Sally(Cat):
+    @staticmethod
+    def sing(self, sounds):
+        return f'{sounds}'
+
+
+class Mango(Cat):
+    @staticmethod
+    def sing(self, sounds):
+        return f'{sounds}'
+
+
+simon = Simon('Simon', 6)
+sally = Sally('Sally', 10)
+mango = Mango('Mango', 14)
+
+my_cats = [simon, sally, mango]
+
+my_pets = Pets(my_cats)
+
+my_pets.walk()
+
+```
