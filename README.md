@@ -1376,7 +1376,7 @@ print(PlayerCharacter.adding(10, 10))
 
 4. Inheritance: parent classes can have children classes (see example below)
 
-5.Polymorphism: methods can be bound to objects rather than classes. This means that methods with same name will get 
+5. Polymorphism: methods can be bound to objects rather than classes. This means that methods with same name will get 
 over-ridden by the method created within the object. However, polymorphism also allows a code to access both the 
 parent and child attributes if needed. 
 
