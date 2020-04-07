@@ -1513,3 +1513,9 @@ wizard1 = Wizard('Merlin', 50, 'merlin@gmail.com')
 print(wizard1.email)
 
 ```
+Example of how to call a dir of methods/functions available within an object:
+```python
+
+print(dir(wizard1))
+
+```
