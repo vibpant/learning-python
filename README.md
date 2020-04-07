@@ -1365,5 +1365,69 @@ class PlayerCharacter:
 print(PlayerCharacter.adding(10, 10))
 
 ```
+# Four pillars of OOP
+```python
+
+'''
+1. Encapsulation : ability to call actions (functions and methods) from within a code
+
+2. Abstraction: ability to rely more on the utility and application of code rather than nitty-gritty
+    a. There isn't any privacy in Python code - a convention is used where underscore (_) denotes private code
+
+4. Inheritance: parent classes can have children classes (see example below)
+
+5.Polymorphism: methods can be bound to objects rather than classes. This means that methods with same name will get 
+over-ridden by the method created within the object. However, polymorphism also allows a code to access both the 
+parent and child attributes if needed. 
+
+'''
 
 
+class User():
+    def sign_in(self):  # When there is no variable assigned to the class, no need to use __init__
+        print('logged in')
+
+
+class Wizard(User):
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f'Attacking with power of {self.power}')
+
+
+class Archer(User):
+    def __init__(self, name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
+
+    def attack(self):
+        print(f'Attacking with arrows. Remaining arrows: {self.num_arrows}')
+
+
+wizard1 = Wizard('Merlin', 50)
+archer1 = Archer('Robin', 100)
+
+# Example of polymorphism
+wizard1.attack()
+archer1.attack()
+
+print(isinstance(wizard1, Wizard))
+
+
+def player_attack(char):
+    char.attack()
+
+
+player_attack(wizard1)
+player_attack(archer1)
+
+# or
+
+for char in [wizard1, archer1]:
+    char.attack()
+
+char.attack()
+
+```
