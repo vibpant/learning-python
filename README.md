@@ -1330,7 +1330,11 @@ def oldest_cat(*args):
 print(f"The oldest cat is {oldest_cat(cat1.age, cat2.age, cat3.age)} years old")
 
 ```
-Methods within class:
+Methods within class
+
+❗️🔆 Within classes, you can use certain in built methods by invoking 'self'. However, the more important and powerful ability is to create your own methods by building functions within classes. This is done by using 'def' and whatever done within those functions, can be used as a class attribute. 
+
+Also, one can create a class OBJECT attribute, which applies to all instantiated objects. 
 ```python
 
 class PlayerCharacter:
