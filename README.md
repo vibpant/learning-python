@@ -1519,3 +1519,40 @@ Example of how to call a dir of methods/functions available within an object:
 print(dir(wizard1))
 
 ```
+# Dunder Methods
+Dunder methods are built in Python methods that can be accessed for various actions. In certain scenarios, these methods can be modified as well. It is advisable to not modify them unless absolutely needed.
+
+Examples:
+```python
+
+
+class Toy:
+    def __init__(self, color, age):
+        self.color = color
+        self.age = age
+        self.my_dict = {
+            'name': 'Yoyo',
+            'has_pets': False
+        }
+
+    def __str__(self):
+        return f'{self.color}'
+
+    def __len__(self):
+        return 5
+
+    def __call__(self):
+        return 'yess?'
+
+    def __getitem__(self, i):
+        return self.my_dict[i]
+
+
+action_figure = Toy('red', 0)
+print(action_figure.__str__())
+print(str(action_figure))
+print(len(action_figure))
+print(action_figure())
+print(action_figure['name'])
+
+```
