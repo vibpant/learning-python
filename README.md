@@ -1556,3 +1556,26 @@ print(action_figure())
 print(action_figure['name'])
 
 ```
+# 
+Inheritance exercise
+
+This demonstrates how a class can inherit all the functionality of a predefined function within Python ('list' in this case). This negates the need to create/modify any dunder methods that mimic pre-existing class methods.
+```python
+
+class SuperList(list):
+    def __len__(self):
+        return 1000
+
+
+super_list1 = SuperList()
+
+# Tests
+print(len(super_list1))
+super_list1.append(5)
+print(super_list1[0])
+print(issubclass(SuperList, list))
+print(issubclass(list, object))
+super_list1.append(6)
+print(super_list1)
+
+```
