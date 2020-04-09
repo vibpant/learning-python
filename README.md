@@ -1631,7 +1631,7 @@ print(M.mro())
 
 ```
 More explanation and examples on OOP:
-#
+---------------------------------------
 Functions in OOP are called methods
 
 Class is similar to a design of a product. In python they contain attributes and methods(behaviors or actions) for objects.
