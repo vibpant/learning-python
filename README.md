@@ -1849,3 +1849,52 @@ super().__init__() resolves from left to right if multiple inheritance is specif
 
 For e.g.: if there was a C(A,B) class and there was no super on B as shown above, then the super of C would resolve in both A init and C init but would ignore the B init, despite B being one of the superclass of C (MRO applies here)
 
+-------------------------------------
+
+Polymorphism Example:
+
+Duck typing: If a bird is walking like a duck, swimming like a duck and quacking like a duck, then it is a duck.
+
+💡Variable name is just a name to a memory.
+```python
+
+class PyCharm:
+
+    def execute(self):
+        print("Compiling")
+        print("Running")
+
+
+class MyEditor:
+
+    def execute(self):
+        print("Spell Check")
+        print("Convention Check")
+        print("Compiling")
+        print("Running")
+
+
+class Laptop:
+
+    def code(self, ide):
+        ide.execute()
+
+
+ide = MyEditor()
+lap1 = Laptop()
+
+lap1.code(ide)
+
+```
+Example of built in methods used to call variables within a function(eg: print)
+```python
+
+a = '5'
+b = '6'
+
+print(a + b)
+
+print(str.__add__(a, b))
+
+```
+
