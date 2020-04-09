@@ -1630,3 +1630,58 @@ class M(B, A, Z):
 print(M.mro())
 
 ```
+More explanation and examples on OOP:
+#
+Functions in OOP are called methods
+
+Class is similar to a design of a product. In python they contain attributes and methods(behaviors or actions) for objects.
+
+Object is an instance of a class
+
+Example:
+```python
+
+class Computer:
+
+    def __init__(self, cpu, ram):
+        print("in init")
+        self.cpu = cpu
+        self.ram = ram
+
+    def config(self):
+        print("Config is ", self.cpu, self.ram)
+
+
+com1 = Computer('i5', 16)
+com2 = Computer('Ryzen', 8)
+
+# More common way to call it:
+com1.config()
+com2.config()
+
+
+class ComputerA:
+
+    def __init__(self):
+        self.name = "Vib"
+        self.age = 37
+
+    def compare(self, other):
+        if self.age == other.age:
+            return True
+        else:
+            return False
+
+
+c1 = ComputerA()
+c2 = ComputerA()
+print(id(c1))  # id displays the address of the memory
+
+if c1.compare(c2):
+    print('they are same')
+
+
+print(c1.name)
+print(c1.age)
+
+```
