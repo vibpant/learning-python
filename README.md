@@ -1814,3 +1814,38 @@ c1.  # this would show all class methods
 a1.  # this would show only A class methods
 
 ```
+MRO Example:
+```python
+
+class A:  # Superclass
+
+    def __init__(self):
+        print("In A __init__")
+
+    def feature1(self):
+        print("Feature1 working")
+
+    def feature2(self):
+        print("Feature2 working")
+
+
+class B(A):  # Subclass
+
+    def __init__(self):
+        super().__init__()  # this allows B to continue inherit the __init__ from A and MRO doesn't apply
+        print("In B __init__")
+
+    def feature3(self):
+        print("Feature3 working")
+
+    def feature4(self):
+        print("Feature4 working")
+
+
+a1 = B()  # __init__ from B class will take precedence, despite of B being the subclass of A
+
+```
+super().__init__() resolves from left to right if multiple inheritance is specified as a Class parameter. Super can be used to call superclass methods as well (as long as proper inheritance is specified - MRO would apply)
+
+For e.g.: if there was a C(A,B) class and there was no super on B as shown above, then the super of C would resolve in both A init and C init but would ignore the B init, despite B being one of the superclass of C (MRO applies here)
+
