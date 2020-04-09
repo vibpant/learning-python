@@ -1811,7 +1811,6 @@ c1 = C()
 
 b1.  # this would show only B class methods
 c1.  # this would show all class methods
-
 a1.  # this would show only A class methods
 
 ```
