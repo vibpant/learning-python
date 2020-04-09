@@ -1685,3 +1685,56 @@ print(c1.name)
 print(c1.age)
 
 ```
+More Examples:
+```python
+
+class Car:
+    wheels = 4
+
+    def __init__(self, mil, com):
+        self.mil = mil
+        self.com = com
+
+
+c1 = Car(20, 'Tesla')
+c2 = Car(30, 'BMW')
+c2.com = 'TYT'
+print(c1.com, c1.mil, c1.wheels)
+print(c2.com, c2.mil, c2.wheels)
+
+
+class Student:
+    school = 'St. John'
+
+    def __init__(self, m1, m2, m3):
+        self.m1 = m1
+        self.m2 = m2
+        self.m3 = m3
+
+    def avg(self):
+        return (self.m1 + self.m2 + self.m3) / 3
+
+    def get_m1(self):
+        return self.m1
+
+    def set_m1(self, value):
+        self.m1 = value
+
+    @classmethod
+    def getSchool(cls):
+        return cls.school
+
+    @staticmethod
+    def info():
+        print("This is student class...in abc module")
+
+
+s1 = Student(65, 74, 57)
+s2 = Student(45, 89, 32)
+
+print(s1.avg())
+print(s2.avg())
+print(Student.getSchool())
+Student.info()
+
+```
