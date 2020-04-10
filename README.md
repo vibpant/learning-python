@@ -1897,4 +1897,52 @@ print(a + b)
 print(str.__add__(a, b))
 
 ```
+Operator overloading
+-
+Whenever a function is called for a class object, a method needs to be declared behind the scenes.
+```python
+
+class Student:
+
+    def __init__(self, m1, m2):
+        self.m1 = m1
+        self.m2 = m2
+
+    def __add__(self, other):
+        m1 = self.m1 + other.m1
+        m2 = self.m2 + other.m2
+        s3 = Student(m1, m2)
+
+        return s3
+
+    def __gt__(self, other):
+        r1 = self.m1 + self.m2
+        r2 = other.m1 + other.m2
+
+        if r1 > r2:
+            return True
+
+    def __str__(self):
+        return '{} {} '.format(self.m1, self.m2)
+
+
+s1 = Student(58, 69)
+s2 = Student(40, 57)
+
+s3 = s1 + s2
+# The above code, without __add__ defined will error as built in method won't work within a defined class.
+
+print(s3.m2)
+
+if s1 > s2:
+    print("s1 wins")
+else:
+    print("s2 wins")
+
+# Both these codes are same. Print is calling the __str__ method in the background
+
+print(s1)
+print(s1.__str__())
+
+```
 
