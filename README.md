@@ -1947,7 +1947,7 @@ print(s1)
 print(s1.__str__())
 
 ```
--
+
 Method overloading:
 
 It doesn't really exist directly in Python
@@ -1979,7 +1979,7 @@ s1 = Student(58, 69)
 print(s1.sum(5, ))
 
 ```
--
+
 Method overriding:
 
 This concept is used heavily in development industry
