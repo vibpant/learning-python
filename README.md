@@ -1899,7 +1899,7 @@ print(str.__add__(a, b))
 ```
 Operator overloading
 -
-Whenever a function is called for a class object, a method needs to be declared behind the scenes.
+Whenever an operator (and function) is called for a class object, a method needs to be declared behind the scenes. The method is always run in the background at the object level (+ is actually __add__(self))
 ```python
 
 class Student:
