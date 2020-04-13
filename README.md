@@ -1267,6 +1267,736 @@ Due to the limitations of the machines. When scopes are managed locally, non-loc
 
 Python empties the memory taken by local and non-local(parent) variables. 
 
+# Object Oriented Programming (OOP)
+Examples of built in classes (or data types and structures in Python)
+```python
+
+print(type(None))
+print(type(True))
+print(type(5))
+print(type(5.5))
+print(type('hi'))
+print(type([]))
+print(type(()))
+print(type({}))
+
+```
+Class names are capitalized and camel case is used
+```python
+
+class BigObject:
+    pass
 
 
+obj1 = BigObject()  # double-bracket means that you are instantiating the class.
+obj2 = BigObject()
+obj3 = BigObject()
 
+print(type(obj1))
+
+
+class PlayerCharacter:
+    def __init__(self, name):
+        self.name = name
+
+    def run(self):
+        print('run')
+
+
+player1 = PlayerCharacter('Cindy')
+
+print(player1)
+print(player1.name)
+
+```
+#
+OOP Exercise
+```python
+
+class Cat:
+    species = 'mammal'
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+  
+
+cat1 = Cat('Minty', 5)
+cat2 = Cat('Pinky', 12)
+cat3 = Cat('Sally', 15)
+
+def oldest_cat(*args):
+    return max(args)
+
+print(f"The oldest cat is {oldest_cat(cat1.age, cat2.age, cat3.age)} years old")
+
+```
+Methods within class
+
+❗️🔆 Within classes, you can use certain in built methods by invoking 'self'. However, the more important and powerful ability is to create your own methods by building functions within classes. This is done by using 'def' and whatever done within those functions, can be used as a class attribute. 
+
+Also, one can create a class OBJECT attribute, which applies to all instantiated objects. 
+```python
+
+class PlayerCharacter:
+    membership = True # This is a class object attribute
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        if (int(age) > 18):
+            print("You can play this game, what is your name and age?")
+        else:
+            print("You cannot play this game")
+    
+    def shout(self):
+        print(f'Your name is {self.name} and age is {self.age}')
+
+# Example of class method
+
+    @classmethod
+    def adding(cls, num1, num2): #cls stands for class
+        return cls('Teddy', num1 + num2)
+    
+#Example of static method
+    
+    @staticmethod
+    def adding_1(num_1, num_2):
+        return num_1 + num_2
+    
+print(PlayerCharacter.adding(10, 10))
+
+```
+# Four pillars of OOP
+```python
+
+'''
+1. Encapsulation : ability to call actions (functions and methods) from within a code
+
+2. Abstraction: ability to rely more on the utility and application of code rather than nitty-gritty
+    a. There isn't any privacy in Python code - a convention is used where underscore (_) denotes private code
+
+4. Inheritance: parent classes can have children classes (see example below)
+
+5. Polymorphism: methods can be bound to objects rather than classes. This means that methods with same name will get 
+over-ridden by the method created within the object. However, polymorphism also allows a code to access both the 
+parent and child attributes if needed. 
+
+'''
+
+
+class User():
+    def sign_in(self):  # When there is no variable assigned to the class, no need to use __init__
+        print('logged in')
+
+
+class Wizard(User):
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f'Attacking with power of {self.power}')
+
+
+class Archer(User):
+    def __init__(self, name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
+
+    def attack(self):
+        print(f'Attacking with arrows. Remaining arrows: {self.num_arrows}')
+
+
+wizard1 = Wizard('Merlin', 50)
+archer1 = Archer('Robin', 100)
+
+# Example of polymorphism
+wizard1.attack()
+archer1.attack()
+
+print(isinstance(wizard1, Wizard))
+
+
+def player_attack(char):
+    char.attack()
+
+
+player_attack(wizard1)
+player_attack(archer1)
+
+# or
+
+for char in [wizard1, archer1]:
+    char.attack()
+
+char.attack()
+
+```
+Class, objects, and four pillars of OOP - An exercise
+```python
+
+class Pets:
+    animals = []
+
+    def __init__(self, animals):
+        self.animals = animals
+
+    def walk(self):
+        for animal in self.animals:
+            print(animal.walk())
+
+
+class Cat:
+    is_lazy = True
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def walk(self):
+        return f'{self.name} is just walking around'
+
+
+class Simon(Cat):
+    @staticmethod
+    def sing(sounds):
+        return f'{sounds}'
+
+
+class Sally(Cat):
+    @staticmethod
+    def sing(self, sounds):
+        return f'{sounds}'
+
+
+class Mango(Cat):
+    @staticmethod
+    def sing(self, sounds):
+        return f'{sounds}'
+
+
+simon = Simon('Simon', 6)
+sally = Sally('Sally', 10)
+mango = Mango('Mango', 14)
+
+my_cats = [simon, sally, mango]
+
+my_pets = Pets(my_cats)
+
+my_pets.walk()
+
+```
+Example of how the parent class methods/attributes can be accessed from within the sub-classes by using 'super'
+```python
+
+class User:
+    def __init__(self, email):
+        self.email = email
+        
+    @staticmethod
+    def sign_in(self):
+        print('logged in')
+
+
+class Wizard(User):
+    def __init__(self, name, power, email):
+        # old method: User.__init__(self, email)
+        super().__init__(email)  # New addition of 'super' that eliminates the need of passing 'self'
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f'Attacking with power of {self.power}')
+
+
+wizard1 = Wizard('Merlin', 50, 'merlin@gmail.com')
+
+print(wizard1.email)
+
+```
+Example of how to call a dir of methods/functions available within an object:
+```python
+
+print(dir(wizard1))
+
+```
+# Dunder Methods
+Dunder methods are built in Python methods that can be accessed for various actions. In certain scenarios, these methods can be modified as well. It is advisable to not modify them unless absolutely needed.
+
+Examples:
+```python
+
+
+class Toy:
+    def __init__(self, color, age):
+        self.color = color
+        self.age = age
+        self.my_dict = {
+            'name': 'Yoyo',
+            'has_pets': False
+        }
+
+    def __str__(self):
+        return f'{self.color}'
+
+    def __len__(self):
+        return 5
+
+    def __call__(self):
+        return 'yess?'
+
+    def __getitem__(self, i):
+        return self.my_dict[i]
+
+
+action_figure = Toy('red', 0)
+print(action_figure.__str__())
+print(str(action_figure))
+print(len(action_figure))
+print(action_figure())
+print(action_figure['name'])
+
+```
+# 
+Inheritance exercise
+
+This demonstrates how a class can inherit all the functionality of a predefined function within Python ('list' in this case). This negates the need to create/modify any dunder methods that mimic pre-existing class methods.
+```python
+
+class SuperList(list):
+    def __len__(self):
+        return 1000
+
+
+super_list1 = SuperList()
+
+# Tests
+print(len(super_list1))
+super_list1.append(5)
+print(super_list1[0])
+print(issubclass(SuperList, list))
+print(issubclass(list, object))
+super_list1.append(6)
+print(super_list1)
+
+```
+'''
+# MRO - Method Resolution Order
+
+It is a rule within Python which determines the order of the class to run methods from when complex multiple inheritance is in effect.
+```python
+
+class A:
+    num = 10
+
+
+class B(A):
+    pass
+
+
+class C(A):
+    num = 1
+
+
+class D(B, C):
+    pass
+
+
+print(D.mro())
+
+
+class X:
+    pass
+
+
+class Y:
+    pass
+
+
+class Z:
+    pass
+
+
+class A(X, Y):
+    pass
+
+
+class B(Y, Z):
+    pass
+
+
+class M(B, A, Z):
+    pass
+
+print(M.mro())
+
+```
+More explanation and examples on OOP:
+---------------------------------------
+Functions in OOP are called methods
+
+Class is similar to a design of a product. In python they contain attributes and methods(behaviors or actions) for objects.
+
+Object is an instance of a class
+
+Example:
+```python
+
+class Computer:
+
+    def __init__(self, cpu, ram):
+        print("in init")
+        self.cpu = cpu
+        self.ram = ram
+
+    def config(self):
+        print("Config is ", self.cpu, self.ram)
+
+
+com1 = Computer('i5', 16)
+com2 = Computer('Ryzen', 8)
+
+# More common way to call it:
+com1.config()
+com2.config()
+
+
+class ComputerA:
+
+    def __init__(self):
+        self.name = "Vib"
+        self.age = 37
+
+    def compare(self, other):
+        if self.age == other.age:
+            return True
+        else:
+            return False
+
+
+c1 = ComputerA()
+c2 = ComputerA()
+print(id(c1))  # id displays the address of the memory
+
+if c1.compare(c2):
+    print('they are same')
+
+
+print(c1.name)
+print(c1.age)
+
+```
+More Examples:
+```python
+
+class Car:
+    wheels = 4
+
+    def __init__(self, mil, com):
+        self.mil = mil
+        self.com = com
+
+
+c1 = Car(20, 'Tesla')
+c2 = Car(30, 'BMW')
+c2.com = 'TYT'
+print(c1.com, c1.mil, c1.wheels)
+print(c2.com, c2.mil, c2.wheels)
+
+
+class Student:
+    school = 'St. John'
+
+    def __init__(self, m1, m2, m3):
+        self.m1 = m1
+        self.m2 = m2
+        self.m3 = m3
+
+    def avg(self):
+        return (self.m1 + self.m2 + self.m3) / 3
+
+    def get_m1(self):
+        return self.m1
+
+    def set_m1(self, value):
+        self.m1 = value
+
+    @classmethod
+    def getSchool(cls):
+        return cls.school
+
+    @staticmethod
+    def info():
+        print("This is student class...in abc module")
+
+
+s1 = Student(65, 74, 57)
+s2 = Student(45, 89, 32)
+
+print(s1.avg())
+print(s2.avg())
+print(Student.getSchool())
+Student.info()
+
+```
+Example of Class within a Class:
+```python
+
+class Student:
+
+    def __init__(self, name, rollno):
+        self.name = name
+        self.rollno = rollno
+        self.lap = self.Laptop()
+
+    def show(self):
+        print(f'Student name: {self.name}\nRoll no:  {self.rollno}')
+        self.lap.show()
+
+    class Laptop:
+
+        def __init__(self):
+            self.brand = 'HP'
+            self.cpu = 'i5'
+            self.ram = 8
+
+        def show(self):
+            print(f'Laptop: {self.brand}, {self.cpu}, {self.ram}')
+
+
+s1 = Student('Navin', 2)
+s2 = Student('Jenny', 4)
+
+# s1.show()
+
+lap1 = s1.lap
+lap2 = s2.lap
+
+s1.show()
+
+```
+General Inheritance example and class relationships
+```python
+
+class A:  # Superclass
+    def feature1(self):
+        print("Feature1 working")
+
+    def feature2(self):
+        print("Feature2 working")
+
+
+class B:  # Subclass
+    def feature3(self):
+        print("Feature3 working")
+
+    def feature4(self):
+        print("Feature4 working")
+
+
+class C(A, B):
+    def feature5(self):
+        print("Feature5 working")
+
+
+a1 = A()
+
+a1.feature1()
+a1.feature2()
+
+b1 = B()
+
+c1 = C()
+
+#Superclass >> Subclass relationship:
+
+b1.  # this would show only B class methods
+c1.  # this would show all class methods
+a1.  # this would show only A class methods
+
+```
+MRO Example:
+```python
+
+class A:  # Superclass
+
+    def __init__(self):
+        print("In A __init__")
+
+    def feature1(self):
+        print("Feature1 working")
+
+    def feature2(self):
+        print("Feature2 working")
+
+
+class B(A):  # Subclass
+
+    def __init__(self):
+        super().__init__()  # this allows B to continue inherit the __init__ from A and MRO doesn't apply
+        print("In B __init__")
+
+    def feature3(self):
+        print("Feature3 working")
+
+    def feature4(self):
+        print("Feature4 working")
+
+
+a1 = B()  # __init__ from B class will take precedence, despite of B being the subclass of A
+
+```
+super().__init__() resolves from left to right if multiple inheritance is specified as a Class parameter. Super can be used to call superclass methods as well (as long as proper inheritance is specified - MRO would apply)
+
+For e.g.: if there was a C(A,B) class and there was no super on B as shown above, then the super of C would resolve in both A init and C init but would ignore the B init, despite B being one of the superclass of C (MRO applies here)
+
+-------------------------------------
+
+Polymorphism Example:
+
+Duck typing: If a bird is walking like a duck, swimming like a duck and quacking like a duck, then it is a duck.
+
+💡Variable name is just a name to a memory.
+```python
+
+class PyCharm:
+
+    def execute(self):
+        print("Compiling")
+        print("Running")
+
+
+class MyEditor:
+
+    def execute(self):
+        print("Spell Check")
+        print("Convention Check")
+        print("Compiling")
+        print("Running")
+
+
+class Laptop:
+
+    def code(self, ide):
+        ide.execute()
+
+
+ide = MyEditor()
+lap1 = Laptop()
+
+lap1.code(ide)
+
+```
+Example of built in methods used to call variables within a function(eg: print)
+```python
+
+a = '5'
+b = '6'
+
+print(a + b)
+
+print(str.__add__(a, b))
+
+```
+Types of Polymorphism
+-
+Operator overloading:
+
+Whenever an operator (and function) is called for a class object, a method needs to be declared behind the scenes. The method is always run in the background at the object level (+ is actually __add__(self))
+```python
+
+class Student:
+
+    def __init__(self, m1, m2):
+        self.m1 = m1
+        self.m2 = m2
+
+    def __add__(self, other):
+        m1 = self.m1 + other.m1
+        m2 = self.m2 + other.m2
+        s3 = Student(m1, m2)
+
+        return s3
+
+    def __gt__(self, other):
+        r1 = self.m1 + self.m2
+        r2 = other.m1 + other.m2
+
+        if r1 > r2:
+            return True
+
+    def __str__(self):
+        return '{} {} '.format(self.m1, self.m2)
+
+
+s1 = Student(58, 69)
+s2 = Student(40, 57)
+
+s3 = s1 + s2
+# The above code, without __add__ defined will error as built in method won't work within a defined class.
+
+print(s3.m2)
+
+if s1 > s2:
+    print("s1 wins")
+else:
+    print("s2 wins")
+
+# Both these codes are same. Print is calling the __str__ method in the background
+
+print(s1)
+print(s1.__str__())
+
+```
+
+Method overloading:
+
+It doesn't really exist directly in Python
+
+This the trick to perform method overloading in Python:
+```python
+
+class Student:
+    def __init__(self, m1, m2):
+        self.m1 = m1
+        self.m2 = m2
+
+    def sum(self, a=None, b=None, c=None):
+
+        s = 0
+
+        if a != None and b != None and c != None:
+            s = a + b + c
+        elif a != None and b != None:
+            s = a + b
+        else:
+            s = a
+
+        return s
+
+
+s1 = Student(58, 69)
+
+print(s1.sum(5, ))
+
+```
+
+Method overriding:
+
+This concept is used heavily in development industry
+```python
+
+class A:
+    def show(self):
+        print("in A show")
+
+
+class B(A):
+    def show(self):
+        print("in B show")
+
+
+a1 = B()
+
+a1.show()
+
+```
