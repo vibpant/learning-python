@@ -2077,8 +2077,10 @@ print(reduce(accumulator, my_list, 0))
 Lambda expressions
 -
 They are only used once therefore no need to store them in the memory
-from functools import reduce
+from 
 ```python
+
+functools import reduce
 
 my_list = [1, 2, 3]
 
