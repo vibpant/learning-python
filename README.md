@@ -2074,3 +2074,33 @@ from functools import reduce
 print(reduce(accumulator, my_list, 0))
 
 ```
+Lambda expressions
+-
+They are only used once therefore no need to store them in the memory
+from functools import reduce
+```python
+
+my_list = [1, 2, 3]
+
+print(list(map(lambda item: item * 2, my_list)))
+
+# Syntax: lambda param: action(param)
+# lambda can be used with map, filter, reduce
+
+print(reduce(lambda acc, item: acc + item, my_list))
+
+my_new_list = [5, 4, 3]
+
+# Squared example
+print(list(map(lambda item: item ** 2, my_new_list)))
+
+# List sorting example using lambda
+a = [(0, 2), (4, 3), (9, 9), (10, -1)]
+
+a.sort(key=lambda x: x[1])
+
+print(a)
+
+```
+
+
