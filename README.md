@@ -2000,3 +2000,107 @@ a1 = B()
 a1.show()
 
 ```
+# Functional programming
+
+Pure functions: more of a guideline rather an absolute
+
+There is a separation between the data and behavior of a function
+
+A function should not produce any side-effects
+
+Example of a pure function (no side-effect or hard coded data:
+```python
+
+def multiply_by2(li):
+    new_list = []
+    for item in li:
+        new_list.append((item * 2))
+    return new_list
+
+
+print(multiply_by2([1, 2, 3]))
+
+```
+map, filter, zip, and reduce
+-
+```python
+
+def multiply_by2_1(item):
+    return item * 2
+
+
+# map will run the function and iterate the values given in the syntax
+
+print(list(map(multiply_by2_1, [1, 2, 3])))
+
+# another example of how map doesn't mutate the list
+
+my_list = [1, 2, 3]
+
+
+def multi_2(item2):
+    return item2 * 2
+
+
+print(list(map(multi_2, my_list)))
+print(my_list)
+
+
+# filter example
+
+def check_odd(item):
+    return item % 2 != 0
+
+
+print(list(filter(check_odd, my_list)))
+
+# zip example: it joins 2 iterable lists or tuples together in tuples
+# application example: a list of name and phone numbers can be created using zip
+# zip doesn't mutate the lists or tuples being zipped
+my_list_1 = [1, 2, 3]
+your_list = [10, 20, 30]
+
+print(list(zip(my_list_1, your_list)))
+
+
+# reduce example (under the hood, map and filter use reduce function)
+def accumulator(acc, item):
+    print(acc, item)
+    return acc + item
+
+
+from functools import reduce
+
+print(reduce(accumulator, my_list, 0))
+
+```
+Lambda expressions
+-
+They are only used once therefore no need to store them in the memory
+from functools import reduce
+```python
+
+my_list = [1, 2, 3]
+
+print(list(map(lambda item: item * 2, my_list)))
+
+# Syntax: lambda param: action(param)
+# lambda can be used with map, filter, reduce
+
+print(reduce(lambda acc, item: acc + item, my_list))
+
+my_new_list = [5, 4, 3]
+
+# Squared example
+print(list(map(lambda item: item ** 2, my_new_list)))
+
+# List sorting example using lambda
+a = [(0, 2), (4, 3), (9, 9), (10, -1)]
+
+a.sort(key=lambda x: x[1])
+
+print(a)
+
+```
+
+
