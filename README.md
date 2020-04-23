@@ -2142,4 +2142,114 @@ my_dict2 = {k: k * 2 for k in [1, 2, 3]}
 print(my_dict2)
 
 ```
+Higher Order Function
+-
+```python
 
+def greet(func):
+    func()
+
+
+def greet2():
+    def func():
+        return 5
+
+    return func
+
+```
+
+# Decorators
+Decorators are functions that enhances another function
+
+Example 1: decorators
+```python
+
+def my_decorator(func):
+    def wrap_func():
+        print('*********')
+        func()
+        print('*********')
+
+    return wrap_func
+
+
+@my_decorator
+def hello():
+    print('hello')
+
+
+@my_decorator
+def bye():
+    print('see ya later')
+
+
+hello()
+bye()
+
+```
+Example 2
+```python
+
+def my_decorator2(func):
+    def wrap_func2(x):
+        print("***********")
+        func(x)
+        print("***********")
+
+    return wrap_func2
+
+
+@my_decorator2
+def hello(greeting):
+    print(greeting)
+
+
+hello('supdawg')
+
+```
+Example 2 modification with decorator pattern
+```python
+
+def my_decorator2(func):
+    def wrap_func2(*args, **kwargs):
+        print("***********")
+        func(*args, *kwargs)
+        print("***********")
+
+    return wrap_func2
+
+
+@my_decorator2
+def hello(greeting, emoji=':)'):
+    print(greeting, emoji)
+
+
+hello('yoyo')
+
+```
+Example 3
+```python
+
+from time import time
+
+
+def performance(func):
+    def wrap_func3(*args, **kwargs):
+        t1 = time()
+        result = func(*args, **kwargs)
+        t2 = time()
+        print(f'took {t2 - t1} s')
+        return result
+
+    return wrap_func3
+
+
+@performance
+def long_time():
+    for i in range(1000000):
+        i * 5
+
+
+long_time()
+
+```
