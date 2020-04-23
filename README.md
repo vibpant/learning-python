@@ -2283,3 +2283,60 @@ def message_friends(user):
 message_friends(user1)
 
 ```
+# Error handling
+
+Types of errors: type, value,    syntax, name, index, key, zero division, etc.
+
+Example 1
+```python
+
+while True:
+    try:
+        age = int(input('what is your age? '))
+        10 / age
+    except ValueError:
+        print('please enter a number')
+    except ZeroDivisionError:
+        print('please enter a number higher then 0')
+    else:
+        print('thank you!')
+        break
+
+```
+Example 2
+```python
+
+def sum(num1, num2):
+    try:
+        return num1 + num2
+    except TypeError as err:  # add brackets to use multiple errors
+        print(f'please enter numbers {err}')
+
+
+print(sum(1, '2'))
+
+```
+Example 3
+```python
+
+while True:
+    try:
+        age1 = int(input('what is your age? '))
+        10 / age1
+        # rare: raise ValueError('hey, cut it out')
+    except ValueError:
+        print('please enter a number')
+        continue
+    except ZeroDivisionError:
+        print('please enter a number higher then 0')
+        break
+    else:
+        print('thank you!')
+        break
+    finally:
+        print('ok, I am finally done')
+        print('can you hear me')
+        break
+    break
+
+```
