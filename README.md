@@ -2253,3 +2253,33 @@ def long_time():
 long_time()
 
 ```
+Exercise: authentication decorator
+```python
+
+user1 = {
+    'name': 'Sorna',
+    'valid': True
+}
+
+user2 = {
+    'name': 'Kapil',
+    'valid': False
+}
+
+
+def authenticated(fn):
+    def wrapper(*args, **kwargs):
+        if args[0]['valid']:
+            return fn(*args, **kwargs)
+
+    return wrapper
+
+
+@authenticated
+def message_friends(user):
+    print('message has been sent')
+
+
+message_friends(user1)
+
+```
